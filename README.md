@@ -2,11 +2,17 @@
 NO Any RTOS needed  you will see.... coming very soon
 # use with easy
 All what U should know:
+
 Initialization: 
+
 pFastQueueIni();
+
 Push your Function:
+
 F_push(SomeTestFunction); // push 
+
 Pull your Function:
+
 F_pull()();
 
 Push from ever you want to push and whatever you want (for interruptions with different priorities better to use separate queues) - the pattern is in header - U will understand it easy
