@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include "NORTOS.h"
+#include "nortos.h"
 
 #define Q_SIZE_FAST 16
 
