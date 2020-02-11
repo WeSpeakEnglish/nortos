@@ -15,7 +15,7 @@ Pull your Function:
 
 F_pull()();
 
-Push from ever you want to push and whatever you want (for interruptions with different priorities better to use separate queues) - the pattern is in header - U will understand it easy
+Push from ever you want to push and whatever you want (for interruptions with different priorities better to use separate queues) - the pattern is in header - U will understand it easy.
 Make your high priority interrupts fast like never before!
 Pull from the main process (lowest priority) instead of waiting and in any round - utilize you time properly, all your tasks pushed from whatever you did will be done!
 
