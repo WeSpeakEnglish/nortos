@@ -1,28 +1,28 @@
 // NORTOS: The simplisity matter! By Aleksei Tertychnyi, 2015, WTFPL licenced
 #ifndef _NORTOS_H
 #define _NORTOS_H
+#include <mutex>          // std::mutex
 
 typedef void(*FunctionPointer)(void);
 
 class fQ {
 private:
-    unsigned int first;
-    unsigned int last;
+    std::atomic<int> first;
+    std::atomic<int> last;
     FunctionPointer * fQueue;
-    unsigned int lengthQ;
-    volatile int MutexF;
+    int lengthQ;
+    std::mutex mtx;
 public:
-    fQ(unsigned int sizeQ);
+    fQ(int sizeQ);
     ~fQ();
     int push(FunctionPointer);
     int pull(void);
 };
 
-fQ::fQ(unsigned int sizeQ){ // initialization of Queue
+fQ::fQ(int sizeQ){ // initialization of Queue
   fQueue = new FunctionPointer[sizeQ];
   last = 0;
   first = 0;
-  MutexF = 0;
   lengthQ = sizeQ;
 }
 
@@ -31,30 +31,28 @@ fQ::~fQ(){ // initialization of Queue
 }
 
 int fQ::push(FunctionPointer pointerF){ // push element from the queue
-  while(MutexF);
-  MutexF = 1;
+ mtx.lock();
   if ((last+1)%lengthQ == first){
-        MutexF = 0;
+        mtx.unlock();
         return 1;
   }
   fQueue[last++] = pointerF;
-  last %= lengthQ;
-  MutexF = 0;
+  last = last%lengthQ;
+  mtx.unlock();
   return 0;
 }
 
 int fQ::pull(void){ // pull element from the queue
-  while(MutexF);
-   MutexF = 1;
+ mtx.lock();
   if (last != first){
   fQueue[first++]();
-  first%=lengthQ;
-  MutexF = 0;
+  first = first%lengthQ;
+   mtx.unlock();
   return 0;
   }
   else{
-      MutexF = 0;
-        return 1;
+   mtx.unlock();
+   return 1;
   }
 }
 
