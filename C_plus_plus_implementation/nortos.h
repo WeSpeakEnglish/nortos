@@ -1,7 +1,6 @@
 // NORTOS: The simplisity matter! By Aleksei Tertychnyi, 2015, WTFPL licenced
 #ifndef _NORTOS_H
 #define _NORTOS_H
-#define Q_SIZE_FAST 16
 
 typedef void(*FunctionPointer)(void);
 

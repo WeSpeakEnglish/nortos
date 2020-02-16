@@ -1,11 +1,9 @@
 #include <iostream>
 #include <chrono>
-#include <thread>
-#include <Windows.h>
 #include <random>
 #include <future>
 #include "nortos.h"
-#include <queue>
+
 
 #define Q_SIZE_FAST 16
 
@@ -15,11 +13,6 @@ random_device dev;
 mt19937 rng(dev());
 uniform_int_distribution<mt19937::result_type> dist1_1000(1,1000);
 
-//queue <FunctionPointer> F1;
-//queue <FunctionPointer> F2;
-//queue <FunctionPointer> F3;
-
-void dummyF(void){}
 
 fQ F1(16);
 fQ F2(16);
