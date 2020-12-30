@@ -1,5 +1,4 @@
 // NORTOS: The simplicity matter! By Aleksei Tertychnyi, 2015, WTFPL licenced
-
 #ifndef _NORTOS_H
 #define _NORTOS_H
 #define Q_SIZE_FAST 16
@@ -105,8 +104,8 @@ struct fParams {
 };
 
 void FP_QueueIni(void); // initialization of Queue
-int FP_push(void (*pointerQ)(void), struct fParams * parameterQ); // push element from the queue
 void FP_pull(void); // pull element from the queue
+int FP_push(void (*pointerQ)(struct fParams *), struct fParams * parameterQ);
 
 volatile int FP_last; // number of last element of fast-speed queue
 int FP_first; // number of first element of fast-speed queue
