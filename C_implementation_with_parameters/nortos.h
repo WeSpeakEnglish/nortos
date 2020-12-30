@@ -1,4 +1,4 @@
-// NORTOS: The simplisity matter! By Aleksei Tertychnyi, 2015, WTFPL licenced
+// NORTOS: The simplicity matter! By Aleksei Tertychnyi, 2015, WTFPL licenced
 
 #ifndef _NORTOS_H
 #define _NORTOS_H
