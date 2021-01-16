@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1609193907 source:c:\prj_to_merge\nortos\c_plus_plus_implementation\example\nortos_cpp\main.cpp
+	<iostream>
+	<chrono>
+	<random>
+	<future>
+	"nortos.h"
+
+1610819202 c:\prj_to_merge\nortos\c_plus_plus_implementation\example\nortos_cpp\nortos.h
+
+1610819653 source:c:\prj_to_merge\nortos\c_plus_plus_implementation\example\nortos_cpp\nortos.cpp
+	"nortos.h"
+
