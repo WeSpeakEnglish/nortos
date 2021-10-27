@@ -1,5 +1,5 @@
 # nortos
-NO Any RTOS needed  you will see.... coming very soon
+NO Any RTOS needed  you will see.... 
 # use with easy
 All what U should know:
 
