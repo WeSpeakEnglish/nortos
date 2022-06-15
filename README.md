@@ -1,5 +1,6 @@
 # nortos
 NO Any RTOS needed  you will see.... 
+see an article here: https://habr.com/ru/post/538912/
 # use with easy
 All what U should know:
 
